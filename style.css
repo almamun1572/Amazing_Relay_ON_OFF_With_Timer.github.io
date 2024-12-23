@@ -620,19 +620,19 @@ input:checked + .slider:before {
     }
 
     .timer-container input, .alarm-container input {
-        width: 220px; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
+        width: 260px; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
 
    .styled-input, .timer-container select, .alarm-container select {
-        width: 220px; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
+        width: 260px; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
 
     .timer-container button, .alarm-container button {
-        width: 220px; /* বাটন সম্পূর্ণ প্রস্থ */
+        width: 260px; /* বাটন সম্পূর্ণ প্রস্থ */
         padding: 12px;
         font-size: 14px;
     }
