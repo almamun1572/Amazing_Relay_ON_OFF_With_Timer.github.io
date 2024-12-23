@@ -606,7 +606,7 @@ input:checked + .slider:before {
         font-size: 20px;
     }
 
-    .timer-settings, .alarm-container {
+    .timer-container, .alarm-container {
         flex-direction: column; /* টাইমার ও অ্যালার্ম খাড়া করা */
         align-items: center; /* কেন্দ্রস্থ করা */
         gap: 10px; /* উপাদানগুলোর মধ্যে সামঞ্জস্যপূর্ণ দূরত্ব */
