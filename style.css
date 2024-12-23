@@ -740,7 +740,7 @@ input:checked + .slider:before {
 
 .styled-button,
     .styled-button.off {
-        font-size: 18px; /* বাটনের ফন্ট সাইজ */
+        font-size: 32px; /* বাটনের ফন্ট সাইজ */
         padding: 12px 25px; /* বড় প্যাডিং */
         background-color: #007bff; /* প্রাইমারি ব্লু */
         color: #fff; /* সাদা টেক্সট */
