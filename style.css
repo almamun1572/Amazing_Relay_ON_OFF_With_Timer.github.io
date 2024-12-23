@@ -47,11 +47,11 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 80px;
-    height: 40px;
+    width: 120px; /* স্লাইডারের প্রস্থ */
+    height: 60px;  /* স্লাইডারের উচ্চতা */
     background: linear-gradient(145deg, #ff9cf5, #ff6cc1); /* বাটনের গ্রাডিয়েন্ট */
     border-radius: 34px;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.6);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.6);
     transition: background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     cursor: pointer;
 }
@@ -74,28 +74,28 @@ body {
 .slider:before {
     content: "😄"; /* এখানে ইমোজি নির্দিষ্ট করা হয়েছে */
     position: absolute;
-    height: 34px;
-    width: 34px;
-    left: 3px;
-    bottom: 3px;
+    height: 50px; /* ইমোজির ব্যাসার্ধ */
+    width: 50px; /* ইমোজির ব্যাসার্ধ */
+    left: 5px; /* ইমোজির অবস্থান */
+    bottom: 5px; /* ইমোজির অবস্থান */
     background-color: white; /* ইমোজির ব্যাকগ্রাউন্ড */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 22px; /* ইমোজির সাইজ */
+    font-size: 30px; /* ইমোজির সাইজ */
     border-radius: 50%;
     color: #555; /* ইমোজির কালার */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.6);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.6);
     transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 input:checked + .slider {
     background: linear-gradient(145deg, #93f9b9, #00c9ff); /* অন অবস্থার জন্য গ্রাডিয়েন্ট */
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.3), inset -6px -6px 12px rgba(255, 255, 255, 0.7); /* ছায়ার আপডেট */
 }
 
 input:checked + .slider:before {
-    transform: translateX(40px); /* ইমোজি ডানদিকে যাবে */
+    transform: translateX(60px); /* ইমোজি ডানদিকে যাবে (বড় স্লাইডারের জন্য মান বাড়ানো হয়েছে) */
     color: #ff1744; /* অন অবস্থায় ইমোজির কালার */
 }
 
