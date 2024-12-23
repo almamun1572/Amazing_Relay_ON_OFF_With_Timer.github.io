@@ -586,7 +586,10 @@ input:checked + .slider:before {
         width: 90px;
         height: 45px;
     }
-
+.switch .slider:before {
+        height: 43px;
+        width: 43px;
+    }
     .timer, .countdown-display {
         font-size: 24px;
     }
@@ -621,7 +624,7 @@ input:checked + .slider:before {
         font-size: 14px;
     }
 
-   .styled-select, .styled-button off, .timer-container select, .alarm-container select {
+   .styled-input, .styled-select, .styled-button off, .timer-container select, .alarm-container select {
         width: 100%; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
