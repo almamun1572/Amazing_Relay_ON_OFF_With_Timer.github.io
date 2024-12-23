@@ -113,7 +113,7 @@ input:checked + .slider:before {
 }
 
 .control-panel h2 {
-    font-size: 28px;
+    font-size: 36px;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
