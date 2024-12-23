@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamun Smart Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css"> <!-- CSS ফাইল যুক্ত -->
+</head>
+<body>
+    <!-- Login Container -->
+    <div class=" login-container">
+        <h2>Mamun Smart Home</h2>
+        <div class="form-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <button onclick="login()">Log In</button>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="container control-container hidden">
+        <div class="control-panel">
+        <h2>Device Control</h2>
+
+   <!-- Relay 1 -->
+<div class="device" id="relay1">
+    <h3>Relay 1</h3>
+    <div class="timer off" id="timer1">00:00</div>
+    <label class="switch">
+        <input type="checkbox" id="relay1Switch" onchange="toggleRelay(1)">
+        <span class="slider"></span>
+    </label>
+    <div class="timer-container">
+        <input type="number" id="timeInput1" class="styled-input" placeholder="Minutes" min="1" style="width: 60px; margin: 5px;">
+        <select id="actionSelect1" class="styled-select" onchange="updateButtonColor(1)">
+            <option  value="on">Turn ON</option>
+            <option  value="off">Turn OFF</option>
+            <option  value="reset">Reset Timer</option>
+        </select>
+        <button id="timerButton1" onclick="setTimer(1)" class="styled-button off">Set Timer</button>
+    </div>
+</div>
+
+<!-- Relay 2 -->
+<div class="device" id="relay2">
+    <h3>Relay 2</h3>
+    <div class="timer off" id="timer2">00:00</div>
+    <label class="switch">
+        <input type="checkbox" id="relay2Switch" onchange="toggleRelay(2)">
+        <span class="slider"></span>
+    </label>
+    <div class="timer-container">
+        <input type="number" id="timeInput2" class="styled-input" placeholder="Minutes" min="1" style="width: 60px; margin: 5px;">
+        <select id="actionSelect2" class="styled-select" onchange="updateButtonColor(2)">
+            <option value="on">Turn ON</option>
+            <option value="off">Turn OFF</option>
+            <option value="reset">Reset Timer</option>
+        </select>
+        <button id="timerButton2" onclick="setTimer(2)" class="styled-button off">Set Timer</button>
+    </div>
+</div>
+
+<!-- Relay 3 -->
+<div class="device" id="relay3">
+    <h3>Relay 3</h3>
+    <div class="timer off" id="timer3">00:00</div>
+    <label class="switch">
+        <input type="checkbox" id="relay3Switch" onchange="toggleRelay(3)">
+        <span class="slider"></span>
+    </label>
+    <div class="timer-container">
+        <input type="number" id="timeInput3" class="styled-input" placeholder="Minutes" min="1" style="width: 60px; margin: 5px;">
+        <select id="actionSelect3" class="styled-select" onchange="updateButtonColor(3)">
+            <option value="on">Turn ON</option>
+            <option value="off">Turn OFF</option>
+            <option value="reset">Reset Timer</option>
+        </select>
+        <button id="timerButton3" onclick="setTimer(3)" class="styled-button off">Set Timer</button>
+    </div>
+</div>
+
+<!-- Relay 4 -->
+<div class="device" id="relay4">
+    <h3>Relay 4</h3>
+    <div class="timer off" id="timer4">00:00</div>
+    <label class="switch">
+        <input type="checkbox" id="relay4Switch" onchange="toggleRelay(4)">
+        <span class="slider"></span>
+    </label>
+    <div class="timer-container">
+        <input type="number" id="timeInput4" class="styled-input" placeholder="Minutes" min="1" style="width: 60px; margin: 5px;">
+        <select id="actionSelect4" class="styled-select" onchange="updateButtonColor(4)">
+            <option value="on">Turn ON</option>
+            <option value="off">Turn OFF</option>
+            <option value="reset">Reset Timer</option>
+        </select>
+        <button id="timerButton4" onclick="setTimer(4)" class="styled-button off">Set Timer</button>
+    </div>
+</div>
+
+    </div>
+
+
+
+    <script src="script.js">
+    </script
+</body>
+</html>
