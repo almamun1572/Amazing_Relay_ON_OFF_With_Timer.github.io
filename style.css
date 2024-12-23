@@ -624,7 +624,7 @@ input:checked + .slider:before {
         font-size: 14px;
     }
 
-   .styled-input, .styled-select, .styled-button off, .timer-container select, .alarm-container select {
+   .styled-input, .timer-container select, .alarm-container select {
         width: 100%; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
