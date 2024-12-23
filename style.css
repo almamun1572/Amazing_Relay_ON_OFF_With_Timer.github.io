@@ -552,9 +552,13 @@ input:checked + .slider:before {
 
 /* Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-        padding: 10px;
+   body {
+        flex-direction: column; /* সবকিছু খাড়া রাখুন */
+        justify-content: flex-start; /* উপরের দিক থেকে শুরু হবে */
+        align-items: center; /* কেন্দ্রে সারিবদ্ধ হবে */
+        padding: 10px; /* প্যাডিং যোগ করুন */
+        overflow-y: auto; /* উল্লম্ব স্ক্রল নিশ্চিত করুন */
+        height: auto; /* উচ্চতা স্বয়ংক্রিয় করে দিন */
     }
 
     .control-panel {
