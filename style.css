@@ -674,34 +674,3 @@ input:checked + .slider:before {
     }
 }
 
-/* Responsive Design for Large Screens (Desktop PCs) */
-@media (min-width: 1441px) {
-    .control-panel {
-        width:99%; /* পিসিতে কন্ট্রোল প্যানেল আরও সংকুচিত */
-        padding: 30px;
-    }
-
-    .device {
-        flex-direction: row; /* বড় পর্দায় ডিভাইস অনুভূমিক থাকবে */
-        padding: 25px;
-        margin: 20px;
-    }
-
-    h2 {
-        font-size: 30px; /* পিসিতে শিরোনামের আকার আরও বড় */
-    }
-
-    .timer, .countdown-display {
-        font-size: 36px; /* টাইমার টেক্সট বড় */
-    }
-
-    .styled-button {
-        font-size: 18px; /* পিসিতে বাটনের আকার বড় করা */
-        padding: 15px 25px;
-    }
-
-    .login-container {
-        width: 30%; /* পিসিতে লগইন কন্টেইনার আরও ছোট */
-        height: 30%;
-    }
-}
