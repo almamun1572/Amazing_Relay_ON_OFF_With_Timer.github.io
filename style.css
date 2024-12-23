@@ -549,56 +549,120 @@ input:checked + .slider:before {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    /* পুরো কন্টেইনার সেন্টার করা এবং প্রস্থ সীমাবদ্ধ */
     .control-panel {
-        width: 100%; /* মোবাইলে কন্ট্রোল প্যানেল পুরো প্রস্থ জুড়ে থাকবে */
-        padding: 10px;
+        width: 95%; /* প্রস্থ মোবাইল স্ক্রিনের 95% */
+        margin: 10px auto;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .login-container {
-        width: 95%; /* মোবাইলে লগইন কন্টেইনার পুরো প্রস্থের কাছাকাছি হবে */
-    }
-
-    .device h3 {
-        font-size: 18px; /* মোবাইলে ডিভাইস শিরোনাম ছোট করা */
-    }
-
-    .timer, .countdown-display {
-        font-size: 24px; /* টাইমার টেক্সট ছোট করা */
-    }
-
-    .styled-button, .styled-input, .styled-select {
-        font-size: 14px; /* মোবাইলে ইনপুট, বাটন এবং ড্রপডাউন ছোট করা */
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        flex-direction: column; /* মোবাইলে সম্পূর্ণ কন্টেন্ট খাড়া করা */
-        height: auto; /* উচ্চতা স্বয়ংক্রিয় */
-    }
-
-    .control-panel, .login-container {
-        margin: 10px; /* মোবাইলে পার্শ্বস্থ স্পেস হ্রাস করা */
-    }
-
-    h2 {
-        font-size: 20px; /* শিরোনাম আরও ছোট করা */
-    }
-
+    /* প্রতিটি ডিভাইস বক্স */
     .device {
-        width: 100%; /* মোবাইলে ডিভাইস ব্লক পুরো প্রস্থে থাকবে */
+        display: flex;
+        flex-direction: column; /* বক্সটি মোবাইলের জন্য কলাম আকারে সাজানো */
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    /* রিলে টেক্সট */
+    .device h3 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    /* টাইমার এবং বাটন */
+    .timer,
+    .countdown-display {
+        font-size: 20px;
+        text-align: center;
         margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        width: 80%;
+        background-color: #f9f9f9;
     }
 
-    .timer-settings input, .alarm-container input {
-        width: 100%; /* ইনপুট ফিল্ড পুরো প্রস্থে নেওয়া */
-    }
-
+    /* বাটন স্টাইল */
     .styled-button {
-        padding: 10px; /* মোবাইলে বাটন ছোট করা */
+        font-size: 14px;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        background-color: #ff5a5a; /* আকর্ষণীয় লাল বাটন */
+        transition: all 0.3s ease-in-out;
+    }
+
+    .styled-button:hover {
+        background-color: #e04c4c;
+        box-shadow: 0px 4px 6px rgba(255, 90, 90, 0.2);
+    }
+
+    /* ড্রপডাউন মেনু */
+    .dropdown {
+        font-size: 14px;
+        padding: 10px;
+        width: 85%;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        margin: 10px auto;
+        background-color: #fff;
+    }
+
+    /* আইকনের জন্য স্টাইল */
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    /* অ্যালার্ম সেট বাটন */
+    .set-alarm {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #4caf50; /* সবুজ রঙ */
+        border: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .set-alarm:hover {
+        background-color: #43a047;
+        box-shadow: 0px 4px 6px rgba(76, 175, 80, 0.2);
+    }
+
+    /* টাইমার ইনপুট */
+    .time-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fdfdfd;
+        margin-bottom: 15px;
+    }
+
+    /* গ্যাপ নিয়ন্ত্রণ */
+    .device > * {
+        margin: 5px 0;
     }
 }
+
 
 
 /* বিদ্যমান কোড অপরিবর্তিত রাখা হয়েছে */
