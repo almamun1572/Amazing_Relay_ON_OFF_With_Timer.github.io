@@ -550,68 +550,81 @@ input:checked + .slider:before {
 }
 
 
-/* Media Query for iPhone 7 (Portrait and Landscape) */
-@media screen and (max-width: 375px) and (max-height: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+/* General Mobile Styles for Small Screens */
+@media screen and (max-width: 375px) {
     body {
-        flex-direction: column; /* সবকিছু খাড়া প্রদর্শন */
-        padding: 10px;
+        display: flex;
+        flex-direction: column; /* ভিউ খাড়া দেখাতে */
+        align-items: center;
+        margin: 0;
+        padding: 10px; /* সামান্য প্যাডিং */
     }
 
     .control-panel {
-        width: 100%; /* পুরো স্ক্রিন জুড়ে থাকবে */
-        padding: 15px;
+        width: 100%; /* পুরো স্ক্রিনে প্রসারিত */
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
     }
 
     .device {
-        flex-direction: column; /* ডিভাইস ব্লক খাড়া করা */
-        padding: 10px;
+        width: 100%; /* ডিভাইস কন্টেইনার স্ক্রিন অনুযায়ী */
+        padding: 15px;
         margin: 10px 0;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
     }
 
     .device h3 {
-        font-size: 16px; /* শিরোনাম আরও ছোট */
-    }
-
-    .switch {
-        width: 55px; /* সুইচের আকার ছোট */
-        height: 28px;
-    }
-
-    .switch .slider:before {
-        height: 22px;
-        width: 22px;
-        font-size: 14px; /* ইমোজি ছোট */
+        font-size: 18px; /* শিরোনামের ফন্ট ছোট */
+        margin-bottom: 10px;
     }
 
     .timer, .countdown-display {
-        font-size: 20px; /* টাইমারের আকার সামঞ্জস্য */
+        font-size: 24px; /* টাইমার ফন্ট সামঞ্জস্য করা */
     }
 
     .styled-button {
         font-size: 14px; /* বাটনের ফন্ট ছোট */
         padding: 8px 12px;
+        margin: 5px 0;
     }
 
-    .login-container {
-        width: 95%; /* স্ক্রিনের সাথে সামঞ্জস্য */
-        padding: 20px;
+    .switch {
+        width: 60px; /* সুইচ ছোট */
+        height: 30px;
     }
 
-    h2 {
-        font-size: 18px; /* শিরোনামের আকার আরও ছোট */
+    .switch .slider:before {
+        height: 26px;
+        width: 26px;
     }
 
+    /* Alarm and Timer Section */
     .timer-settings, .alarm-container {
-        flex-direction: column; /* টাইমার ও অ্যালার্ম খাড়া */
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 5px; /* কম স্পেস */
+        gap: 10px; /* গ্যাপ ঠিক করা */
+        padding: 10px;
     }
 
     .styled-input, .styled-select {
-        font-size: 14px; /* ইনপুট এবং সিলেক্ট ফন্ট ছোট */
-        padding: 6px; /* কম প্যাডিং */
+        width: 90%; /* ইনপুট বক্স সামঞ্জস্য */
+        font-size: 14px;
+        padding: 10px;
     }
 }
+
+
+
+
+
 
 
 
