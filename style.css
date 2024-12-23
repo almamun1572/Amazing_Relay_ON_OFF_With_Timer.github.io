@@ -631,7 +631,7 @@ input:checked + .slider:before {
         font-size: 14px;
     }
 
-    .timer-container button, .alarm-container button {
+  .styled-button off, .styled-button, .timer-container button, .alarm-container button {
         width: 260px; /* বাটন সম্পূর্ণ প্রস্থ */
         padding: 12px;
         font-size: 14px;
