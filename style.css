@@ -550,53 +550,55 @@ input:checked + .slider:before {
 }
 
 
-/* General Mobile Styles for Small Screens */
+/* General Fix for Mobile Screens */
 @media screen and (max-width: 375px) {
     body {
-        display: flex;
-        flex-direction: column; /* ভিউ খাড়া দেখাতে */
-        align-items: center;
         margin: 0;
-        padding: 10px; /* সামান্য প্যাডিং */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden; /* Horizontal scroll বন্ধ */
     }
 
     .control-panel {
-        width: 100%; /* পুরো স্ক্রিনে প্রসারিত */
+        width: 100%;
         padding: 10px;
         margin-bottom: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
     }
 
     .device {
-        width: 100%; /* ডিভাইস কন্টেইনার স্ক্রিন অনুযায়ী */
+        width: 95%; /* ডিভাইস কন্টেইনার স্ক্রিনের সাথে সামঞ্জস্যপূর্ণ */
         padding: 15px;
-        margin: 10px 0;
+        margin: 15px auto;
+        display: flex;
         flex-direction: column;
-        text-align: center;
-        border: 1px solid #ccc;
+        align-items: center;
+        border: 1px solid #ddd;
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .device h3 {
-        font-size: 18px; /* শিরোনামের ফন্ট ছোট */
+        font-size: 18px;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .timer, .countdown-display {
-        font-size: 24px; /* টাইমার ফন্ট সামঞ্জস্য করা */
+        font-size: 22px;
+        margin-bottom: 10px;
     }
 
     .styled-button {
-        font-size: 14px; /* বাটনের ফন্ট ছোট */
+        font-size: 14px;
         padding: 8px 12px;
         margin: 5px 0;
     }
 
     .switch {
-        width: 60px; /* সুইচ ছোট */
+        width: 60px;
         height: 30px;
     }
 
@@ -605,19 +607,19 @@ input:checked + .slider:before {
         width: 26px;
     }
 
-    /* Alarm and Timer Section */
+    /* Fix for Container Overflow */
     .timer-settings, .alarm-container {
         display: flex;
         flex-direction: column;
+        width: 95%; /* স্ক্রিন অনুযায়ী ফিট করা */
         align-items: center;
-        gap: 10px; /* গ্যাপ ঠিক করা */
-        padding: 10px;
+        gap: 10px;
     }
 
-    .styled-input, .styled-select {
-        width: 90%; /* ইনপুট বক্স সামঞ্জস্য */
-        font-size: 14px;
-        padding: 10px;
+    /* Fix for Hidden Containers */
+    .control-panel .device:nth-child(1) {
+        display: flex; /* রিলে ওয়ান দৃশ্যমান করতে */
+        visibility: visible;
     }
 }
 
