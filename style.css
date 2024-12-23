@@ -592,17 +592,6 @@ input:checked + .slider:before {
         background-color: #f9f9f9;
     }
 
-  .alarm,
-    .countdown-display {
-        font-size: 20px;
-        text-align: center;
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        width: 80%;
-        background-color: #f9f9f9;
-    }
     /* বাটন স্টাইল */
     .styled-button {
         font-size: 14px;
