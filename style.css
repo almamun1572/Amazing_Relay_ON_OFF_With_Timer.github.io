@@ -738,33 +738,36 @@ input:checked + .slider:before {
         gap: 15px; /* উপাদানের মধ্যে গ্যাপ */
     }
 
+./* Set Alarm and Set Timer Buttons for All Screens */
 .styled-button,
-    .styled-button.off {
-        font-size: 32px; /* বাটনের ফন্ট সাইজ */
-        padding: 12px 25px; /* বড় প্যাডিং */
-        background-color: #007bff; /* প্রাইমারি ব্লু */
-        color: #fff; /* সাদা টেক্সট */
-        border: none; /* বর্ডার নেই */
-        border-radius: 8px; /* গোলাকার প্রান্ত */
-        cursor: pointer; /* ক্লিক করার ইঙ্গিত */
-        transition: all 0.3s ease; /* মসৃণ পরিবর্তন */
-        width: 80%; /* প্রস্থ 80% */
-        margin: 10px auto; /* উপরের ও নিচের গ্যাপ */
-        text-align: center; /* টেক্সট কেন্দ্রীকরণ */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* হালকা শ্যাডো */
-    }
+.styled-button.off {
+    font-size: 20px; /* বড় ফন্ট সাইজ */
+    padding: 15px 30px; /* বড় প্যাডিং */
+    width: auto; /* বাটনের প্রস্থ নিজের থেকে সামঞ্জস্য */
+    min-width: 150px; /* সর্বনিম্ন প্রস্থ নির্ধারণ */
+    height: auto; /* স্বয়ংক্রিয় উচ্চতা */
+    text-align: center; /* টেক্সট কেন্দ্রীভূত */
+    border-radius: 10px; /* গোলাকার প্রান্ত */
+    background-color: #007bff; /* প্রাইমারি ব্লু রঙ */
+    color: white; /* সাদা টেক্সট */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* হালকা শ্যাডো */
+    transition: all 0.3s ease; /* মসৃণ পরিবর্তন */
+}
 
-    .styled-button:hover,
-    .styled-button.off:hover {
-        background-color: #0056b3; /* হোভার অবস্থায় গাঢ় নীল রঙ */
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* হোভার শ্যাডো */
-    }
+/* Hover Effect for Buttons */
+.styled-button:hover,
+.styled-button.off:hover {
+    background-color: #0056b3; /* হোভার অবস্থায় গাঢ় নীল রঙ */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* হোভার শ্যাডো */
+}
 
-    .styled-button.off {
-        background-color: #dc3545; /* রেড ব্যাকগ্রাউন্ড */
-    }
+/* Special Styling for Off Button */
+.styled-button.off {
+    background-color: #dc3545; /* রেড ব্যাকগ্রাউন্ড */
+}
 
-    .styled-button.off:hover {
-        background-color: #a71d2a; /* হোভার অবস্থায় ডার্ক রেড */
-    }
+.styled-button.off:hover {
+    background-color: #a71d2a; /* হোভার অবস্থায় ডার্ক রেড */
+}
+
 }
