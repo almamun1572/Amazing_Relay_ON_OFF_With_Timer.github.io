@@ -619,19 +619,19 @@ input:checked + .slider:before {
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* 3D শ্যাডো */
     }
 
-    .timer-settings input, .alarm-container input {
+    .timer-container input, .alarm-container input {
         width: 100%; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
 
-    .timer-settings select, .alarm-container select {
+    .timer-container select, .alarm-container select {
         width: 100%; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
 
-    .timer-settings button, .alarm-container button {
+    .timer-container button, .alarm-container button {
         width: 100%; /* বাটন সম্পূর্ণ প্রস্থ */
         padding: 12px;
         font-size: 14px;
