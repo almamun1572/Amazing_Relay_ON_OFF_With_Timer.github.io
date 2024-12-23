@@ -587,6 +587,8 @@ input:checked + .slider:before {
         height: 45px;
     }
 .switch .slider:before {
+        width: 43px;
+        height: 43px;
         font-size: 41px;
     }
     .timer, .countdown-display {
@@ -618,13 +620,13 @@ input:checked + .slider:before {
     }
 
     .timer-container input, .alarm-container input {
-        width: 100%; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
+        width: 400px; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
 
    .styled-input, .timer-container select, .alarm-container select {
-        width: 100%; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
+        width: 400px; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
