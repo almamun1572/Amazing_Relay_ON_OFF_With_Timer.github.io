@@ -28,6 +28,7 @@
         <div class="control-panel">
         <h2>Device Control</h2>
 
+
    <!-- Relay 1 -->
 <div class="device" id="relay1">
     <h3>Relay 1</h3>
@@ -45,7 +46,22 @@
         </select>
         <button id="timerButton1" onclick="setTimer(1)" class="styled-button off">Set Timer</button>
     </div>
+
+<!-- Alarm Setup -->
+<!-- Relay 1 -->
+    <div class="alarm-container">
+    <div id="countdownDisplay1" class="countdown-display"> 00:00:00</div>
+    <input type="time" id="alarmTime1" class="styled-input">
+    <select id="alarmAction1" class="styled-select">
+        <option value="on">Turn ON</option>
+        <option value="off">Turn OFF</option>
+        <option value="resetalarm">Reset Alarm</option>
+    </select>
+    <button id="setAlarm1" onclick="setAlarm(1)" class="styled-button">Set Alarm</button>
 </div>
+
+</div>
+
 
 <!-- Relay 2 -->
 <div class="device" id="relay2">
@@ -64,7 +80,21 @@
         </select>
         <button id="timerButton2" onclick="setTimer(2)" class="styled-button off">Set Timer</button>
     </div>
+
+<!-- Relay 2 -->
+<div class="alarm-container">
+    <div id="countdownDisplay2" class="countdown-display">00:00:00</div>
+    <input type="time" id="alarmTime2" class="styled-input">
+    <select id="alarmAction2" class="styled-select">
+        <option value="on">Turn ON</option>
+        <option value="off">Turn OFF</option>
+        <option value="resetalarm">Reset Alarm</option>
+    </select>
+    <button id="setAlarm2" onclick="setAlarm(2)" class="styled-button">Set Alarm</button>
 </div>
+
+</div>
+
 
 <!-- Relay 3 -->
 <div class="device" id="relay3">
@@ -83,7 +113,20 @@
         </select>
         <button id="timerButton3" onclick="setTimer(3)" class="styled-button off">Set Timer</button>
     </div>
+<!-- Relay 3 -->
+<div class="alarm-container">
+    <div id="countdownDisplay3" class="countdown-display">00:00:00</div>
+    <input type="time" id="alarmTime3" class="styled-input">
+    <select id="alarmAction3" class="styled-select">
+        <option value="on">Turn ON</option>
+        <option value="off">Turn OFF</option>
+        <option value="resetalarm">Reset Alarm</option>
+    </select>
+    <button id="setAlarm3" onclick="setAlarm(3)" class="styled-button">Set Alarm</button>
 </div>
+
+</div>
+
 
 <!-- Relay 4 -->
 <div class="device" id="relay4">
@@ -102,13 +145,23 @@
         </select>
         <button id="timerButton4" onclick="setTimer(4)" class="styled-button off">Set Timer</button>
     </div>
+<!-- Relay 4 -->
+<div class="alarm-container">
+    <div id="countdownDisplay4" class="countdown-display">00:00:00</div>
+    <input type="time" id="alarmTime4" class="styled-input">
+    <select id="alarmAction4" class="styled-select">
+        <option value="on">Turn ON</option>
+        <option value="off">Turn OFF</option>
+        <option value="resetalarm">Reset Alarm</option>
+    </select>
+    <button id="setAlarm4" onclick="setAlarm(4)" class="styled-button">Set Alarm</button>
+</div>
+
 </div>
 
     </div>
 
-
-
     <script src="script.js">
-    </script
+    </script>
 </body>
 </html>

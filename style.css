@@ -1,4 +1,5 @@
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+         * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -97,15 +98,16 @@ input:checked + .slider:before {
     transform: translateX(40px); /* ইমোজি ডানদিকে যাবে */
     color: #ff1744; /* অন অবস্থায় ইমোজির কালার */
 }
-    
 
+    
+/*কন্ট্রোল প্যানেল কন্টেইনার  */
   .control-panel {
     background: linear-gradient(135deg, #2b5876, #4e4376); /* কন্টেইনার ব্যাকগ্রাউন্ড */
     padding: 20px 30px;
     padding-top: 80px;
     border-radius: 20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(255, 255, 255, 0.2);
-    width: 910px;
+    width: 1710px;
     margin: 0 auto;
     text-align: center;
 }
@@ -321,6 +323,20 @@ input:checked + .slider:before {
     transition: all 0.3s ease-in-out;
 }
 
+.countdown-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6f61;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
 .styled-button { 
     font-size: 36px;
     font-weight: bold;
@@ -382,6 +398,18 @@ input:checked + .slider:before {
 }
 /* Timer Container */
 .timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+.alarm-container {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,4 +1,5 @@
- const databaseURL = "https://mamun-4relay-off-default-rtdb.firebaseio.com/";
+
+     const databaseURL = "https://mamun-4relay-off-default-rtdb.firebaseio.com/";
         const databaseSecret = "qRvvjyq1hWfswNHqIzGG2x1iwou6h4iYzYtwdGfH";
 
         // Dummy Login Credentials
@@ -134,3 +135,81 @@ function resetTimer(relayNumber) {
     relaySwitch.checked = false;
     console.log(`Timer for relay ${relayNumber} has been reset.`);
 }
+
+
+
+// Alarm Function with Reset Option
+function setAlarm(relayNumber) {
+    const alarmTimeInput = document.getElementById(`alarmTime${relayNumber}`);
+    const alarmActionSelect = document.getElementById(`alarmAction${relayNumber}`);
+    const countdownDisplay = document.getElementById(`countdownDisplay${relayNumber}`);
+    const relaySwitch = document.getElementById(`relay${relayNumber}Switch`);
+
+    const alarmTime = alarmTimeInput.value;
+    const action = alarmActionSelect.value;
+
+    if (action === "resetalarm") {
+        // Reset Alarm Logic
+        resetAlarm(relayNumber);
+        return;
+    }
+
+    if (!alarmTime) {
+        alert("Please set a valid alarm time!");
+        return;
+    }
+
+    const alarmDate = new Date();
+    const [hours, minutes] = alarmTime.split(":").map(Number);
+    alarmDate.setHours(hours, minutes, 0, 0);
+
+    const now = new Date();
+    if (alarmDate <= now) {
+        alert("Alarm time must be in the future!");
+        return;
+    }
+
+    // Calculate remaining time
+    const interval = setInterval(() => {
+        const now = new Date();
+        const timeLeft = alarmDate - now;
+
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            countdownDisplay.textContent = "00:00:00";
+
+            // Perform the action (turn relay ON/OFF)
+            relaySwitch.checked = action === "on";
+            toggleRelay(relayNumber);
+            alert(`Alarm triggered for relay ${relayNumber}: ${action.toUpperCase()}`);
+        } else {
+            const hrs = String(Math.floor(timeLeft / 3600000)).padStart(2, "0");
+            const mins = String(Math.floor((timeLeft % 3600000) / 60000)).padStart(2, "0");
+            const secs = String(Math.floor((timeLeft % 60000) / 1000)).padStart(2, "0");
+            countdownDisplay.textContent = `${hrs}:${mins}:${secs}`;
+        }
+    }, 1000);
+
+    // Save interval ID for reset functionality
+    countdownDisplay.dataset.interval = interval;
+
+    console.log(`Alarm set for relay ${relayNumber} at ${alarmTime}, action: ${action}`);
+}
+
+// Reset Alarm Function
+function resetAlarm(relayNumber) {
+    const countdownDisplay = document.getElementById(`countdownDisplay${relayNumber}`);
+    const relaySwitch = document.getElementById(`relay${relayNumber}Switch`);
+
+    const existingInterval = countdownDisplay.dataset.interval;
+    if (existingInterval) {
+        clearInterval(existingInterval); // Clear the existing timer
+    }
+
+    countdownDisplay.textContent = "--:--:--"; // Reset countdown display
+    relaySwitch.checked = false; // Turn off the relay
+    console.log(`Alarm for relay ${relayNumber} has been reset.`);
+}
+
+
+
