@@ -651,26 +651,90 @@ input:checked + .slider:before {
 
 /* Responsive Design for Laptop */
 @media (min-width: 1024px) and (max-width: 1440px) {
+    body {
+        font-family: 'Arial', sans-serif; /* পেশাদার ফন্ট */
+        background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+        padding: 20px; /* পর্যাপ্ত প্যাডিং */
+    }
+
     .control-panel {
-        width: 85%; /* ল্যাপটপের জন্য কন্ট্রোল প্যানেল কিছুটা সংকুচিত */
+        width: 80%; /* কন্ট্রোল প্যানেল কিছুটা সংকুচিত */
+        margin: auto; /* কেন্দ্রে রাখা */
+        padding: 30px; /* বড় প্যাডিং */
+        background: #ffffff; /* সাদা ব্যাকগ্রাউন্ড */
+        border-radius: 15px; /* গোলাকার প্রান্ত */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 3D শ্যাডো */
     }
 
     .device {
-        flex-direction: row; /* ল্যাপটপে ডিভাইস ব্লক অনুভূমিক থাকবে */
+        display: flex;
+        flex-direction: row; /* অনুভূমিক লেআউট */
+        justify-content: space-between; /* উপাদানগুলোর মধ্যে গ্যাপ */
         padding: 20px;
-        margin: 15px;
+        margin: 15px 0;
+        background: #f9f9f9; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+        border-radius: 10px; /* গোলাকার প্রান্ত */
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* হালকা শ্যাডো */
+    }
+
+    .device h3 {
+        font-size: 24px; /* শিরোনামের আকার বৃদ্ধি */
+        color: #333; /* গাঢ় রঙ */
     }
 
     h2 {
-        font-size: 26px; /* ল্যাপটপের জন্য শিরোনামের আকার সামান্য বড় */
+        font-size: 28px; /* শিরোনাম বড় */
+        color: #555; /* গাঢ় ধূসর রঙ */
+        text-align: center; /* কেন্দ্রে */
+        margin-bottom: 20px; /* নিচে গ্যাপ */
     }
 
     .timer, .countdown-display {
-        font-size: 30px; /* টাইমারের আকার সামান্য কমানো */
+        font-size: 32px; /* বড় ফন্ট */
+        color: #444; /* নিরপেক্ষ রঙ */
     }
 
     .styled-button {
-        font-size: 16px; /* ল্যাপটপে বাটনের আকার সামঞ্জস্য */
+        font-size: 18px; /* বাটনের ফন্ট সাইজ */
+        padding: 12px 25px; /* বড় প্যাডিং */
+        background-color: #007bff; /* প্রাইমারি ব্লু */
+        color: #fff; /* সাদা টেক্সট */
+        border: none; /* বর্ডার নেই */
+        border-radius: 8px; /* গোলাকার প্রান্ত */
+        cursor: pointer; /* ক্লিক করার ইঙ্গিত */
+        transition: all 0.3s ease; /* মসৃণ পরিবর্তন */
+    }
+
+    .styled-button:hover {
+        background-color: #0056b3; /* গাঢ় নীল রঙ */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* হোভার শ্যাডো */
+    }
+
+    .styled-input, .timer-container input, .alarm-container input {
+        width: 80%; /* ইনপুট প্রস্থ */
+        padding: 15px; /* প্যাডিং */
+        font-size: 16px; /* ফন্ট সাইজ */
+        margin: 10px auto; /* উপরের ও নিচের গ্যাপ */
+        border: 1px solid #ccc; /* পাতলা বর্ডার */
+        border-radius: 8px; /* গোলাকার প্রান্ত */
+        box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1); /* অভ্যন্তরীণ শ্যাডো */
+        transition: all 0.3s ease; /* মসৃণ পরিবর্তন */
+    }
+
+    .styled-input:focus {
+        border-color: #007bff; /* ফোকাসের সময় বর্ডার রঙ পরিবর্তন */
+        outline: none; /* ডিফল্ট ফোকাস সরান */
+        box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5); /* হালকা ব্লু শ্যাডো */
+    }
+
+    .timer-container, .alarm-container {
+        display: flex;
+        flex-direction: row; /* অনুভূমিক */
+        justify-content: space-between; /* উপাদানগুলোর মধ্যে সমান দূরত্ব */
+        align-items: center; /* কেন্দ্রীকরণ */
+        padding: 20px;
+        background: #e8f0fe; /* হালকা নীল ব্যাকগ্রাউন্ড */
+        border-radius: 10px;
+        gap: 15px; /* উপাদানের মধ্যে গ্যাপ */
     }
 }
-
