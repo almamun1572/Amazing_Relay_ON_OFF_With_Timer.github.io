@@ -551,7 +551,7 @@ input:checked + .slider:before {
 
 
 /* Responsive Design for Mobile Screens */
-@media (max-width: 768px) {
+@media (max-width: 375px) {
    body {
         flex-direction: column; /* সবকিছু খাড়া রাখুন */
         justify-content: flex-start; /* উপরের দিক থেকে শুরু হবে */
