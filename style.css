@@ -41,7 +41,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
 }
 
 .switch {
@@ -647,3 +647,50 @@ input:checked + .slider:before {
 
 
 
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.7);
+    overflow: hidden; /* বাইরে থাকা অংশ লুকাতে */
+    position: relative; /* ক্লক প্রান্ত ঠিক রাখতে */
+}
+.time {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+     color: #ff6f61;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    text-shadow: 1px 1px 3px #000, -1px -1px 3px #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* সময়ের মাঝে ফাঁক */
+}
+
+.time span {
+    display: inline-block;
+    padding: 10px 15px;
+    background: linear-gradient(145deg, #3e3e3f, #1c1c1d);
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
+    text-align: center;
+    min-width: 50px; /* প্রস্থ ঠিক রাখতে */
+}
+
+.time .ampm {
+    font-size: 24px;
+    padding: 5px 10px;
+    background: linear-gradient(145deg, #6a6a6b, #3a3a3b);
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
+    text-transform: uppercase;
+    margin-left: 10px; /* AM/PM সঠিক অবস্থানে আনতে */
+    min-width: 40px; /* ফিক্সড প্রস্থ */
+    text-align: center;
+}
