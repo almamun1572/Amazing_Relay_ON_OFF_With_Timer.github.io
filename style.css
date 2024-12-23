@@ -564,7 +564,7 @@ input:checked + .slider:before {
     .control-panel {
         width: 100%;
         padding: 15px;
-        padding-top: 400px;
+        padding-top: 100px;
     }
 
     .device {
