@@ -587,9 +587,9 @@ input:checked + .slider:before {
         height: 45px;
     }
 .switch .slider:before {
-        width: 41px;
-        height: 41px;
-        font-size: 38px;
+        width: 40px;
+        height: 40px;
+        font-size: 37px;
     }
     .timer, .countdown-display {
         font-size: 24px;
@@ -620,19 +620,19 @@ input:checked + .slider:before {
     }
 
     .timer-container input, .alarm-container input {
-        width: 300px; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
+        width: 180px; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
 
    .styled-input, .timer-container select, .alarm-container select {
-        width: 300px; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
+        width: 180px; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
         padding: 10px;
         font-size: 14px;
     }
 
     .timer-container button, .alarm-container button {
-        width: 300px; /* বাটন সম্পূর্ণ প্রস্থ */
+        width: 180px; /* বাটন সম্পূর্ণ প্রস্থ */
         padding: 12px;
         font-size: 14px;
     }
