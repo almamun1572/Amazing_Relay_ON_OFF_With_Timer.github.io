@@ -550,136 +550,68 @@ input:checked + .slider:before {
 }
 
 
-
-
-@media (max-width: 767px) {
-    /* সম্পূর্ণ কন্টেইনার */
-    .control-panel {
-        width: 100%; /* পুরো স্ক্রিন জুড়ে */
-        padding: 20px;
-        margin: 0 auto;
-        background: linear-gradient(135deg, #ff7e5f, #feb47b); /* আকর্ষণীয় গ্র্যাডিয়েন্ট ব্যাকগ্রাউন্ড */
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    /* প্রতিটি ডিভাইস বক্স */
-    .device {
-        display: flex;
-        flex-direction: column; /* মোবাইলের জন্য কলামে সাজানো */
-        align-items: center;
-        margin: 10px 0;
-        padding: 15px;
-        background: #ffffff; /* ফ্ল্যাট ডিজাইন */
-        border-radius: 15px; /* নরম কোণ */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* হালকা শেডো */
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .device:hover {
-        transform: scale(1.02); /* হোভার করলে হালকা জুম এফেক্ট */
-    }
-
-    /* হেডার স্টাইল */
-    .device h3 {
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-
-    /* টাইমার এবং ইনপুট */
-    .timer, .countdown-display {
-        font-size: 22px;
-        color: #ff5a5a;
-        margin: 10px 0;
-        padding: 12px 15px;
-        width: 90%;
-        text-align: center;
-        border: 2px solid #ff7e5f;
-        border-radius: 10px;
-        background-color: #fff7f5;
-    }
-
-    .time-input {
-        width: 90%;
-        padding: 10px;
-        font-size: 18px;
-        text-align: center;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        margin: 10px 0;
-        background-color: #fafafa;
-    }
-
-    /* বাটন স্টাইল */
-    .styled-button {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin: 10px 0;
-        border-radius: 25px;
-        border: none;
-        color: #ffffff;
-        background: linear-gradient(135deg, #ff7e5f, #feb47b);
-        cursor: pointer;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-    }
-
-    .styled-button:hover {
-        background: linear-gradient(135deg, #feb47b, #ff7e5f);
-        box-shadow: 0px 6px 12px rgba(255, 90, 90, 0.4);
-    }
-
-    /* ড্রপডাউন মেনু */
-    .dropdown {
-        width: 90%;
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-        margin: 10px 0;
-        background-color: #ffffff;
-    }
-
-    /* অ্যালার্ম বাটন */
-    .set-alarm {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin-top: 10px;
-        border-radius: 25px;
-        border: none;
-        color: #ffffff;
-        background: linear-gradient(135deg, #4caf50, #81c784);
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .set-alarm:hover {
-        background: linear-gradient(135deg, #81c784, #4caf50);
-        box-shadow: 0px 6px 12px rgba(76, 175, 80, 0.4);
-    }
-
-    /* রিলে আইটেমের মধ্যে গ্যাপ */
-    .device > * {
-        margin: 10px 0;
-    }
-
-    /* আইকন স্টাইল */
-    .icon {
-        width: 32px;
-        height: 32px;
-        margin-right: 8px;
-    }
-
-    /* স্ক্রিনের নিচে স্থান */
+/* Media Query for iPhone 7 (Portrait and Landscape) */
+@media screen and (max-width: 375px) and (max-height: 667px) and (-webkit-min-device-pixel-ratio: 2) {
     body {
-        padding-bottom: 20px;
+        flex-direction: column; /* সবকিছু খাড়া প্রদর্শন */
+        padding: 10px;
+    }
+
+    .control-panel {
+        width: 100%; /* পুরো স্ক্রিন জুড়ে থাকবে */
+        padding: 15px;
+    }
+
+    .device {
+        flex-direction: column; /* ডিভাইস ব্লক খাড়া করা */
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .device h3 {
+        font-size: 16px; /* শিরোনাম আরও ছোট */
+    }
+
+    .switch {
+        width: 55px; /* সুইচের আকার ছোট */
+        height: 28px;
+    }
+
+    .switch .slider:before {
+        height: 22px;
+        width: 22px;
+        font-size: 14px; /* ইমোজি ছোট */
+    }
+
+    .timer, .countdown-display {
+        font-size: 20px; /* টাইমারের আকার সামঞ্জস্য */
+    }
+
+    .styled-button {
+        font-size: 14px; /* বাটনের ফন্ট ছোট */
+        padding: 8px 12px;
+    }
+
+    .login-container {
+        width: 95%; /* স্ক্রিনের সাথে সামঞ্জস্য */
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 18px; /* শিরোনামের আকার আরও ছোট */
+    }
+
+    .timer-settings, .alarm-container {
+        flex-direction: column; /* টাইমার ও অ্যালার্ম খাড়া */
+        align-items: center;
+        gap: 5px; /* কম স্পেস */
+    }
+
+    .styled-input, .styled-select {
+        font-size: 14px; /* ইনপুট এবং সিলেক্ট ফন্ট ছোট */
+        padding: 6px; /* কম প্যাডিং */
     }
 }
-
 
 
 
