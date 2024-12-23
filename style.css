@@ -636,13 +636,14 @@ input:checked + .slider:before {
         padding: 12px;
         font-size: 14px;
     }
-}
 .styled-button,
     .styled-button.off {
         width: 260px; /* সম্পূর্ণ প্রস্থ */
         padding: 12px;
         font-size: 14px;
     }
+
+}
 
 
 
