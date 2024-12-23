@@ -587,8 +587,9 @@ input:checked + .slider:before {
         height: 45px;
     }
 .switch .slider:before {
-        height: 43px;
-        width: 43px;
+        height: 41px;
+        width: 41px;
+        font-size: 26px;
     }
     .timer, .countdown-display {
         font-size: 24px;
