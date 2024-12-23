@@ -553,65 +553,83 @@ input:checked + .slider:before {
 /* Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
     body {
-        flex-direction: column; /* মোবাইলে সবকিছু খাড়া প্রদর্শন */
-        padding: 10px; /* সামান্য প্যাডিং যোগ করা */
+        flex-direction: column;
+        padding: 10px;
     }
 
     .control-panel {
-        width: 100%; /* পুরো স্ক্রিন জুড়ে থাকবে */
+        width: 100%;
         padding: 15px;
     }
 
     .device {
-        flex-direction: column; /* ডিভাইস ব্লক খাড়া করা */
+        flex-direction: column;
         padding: 10px;
         margin: 10px 0;
     }
 
     .device h3 {
-        font-size: 18px; /* শিরোনাম ছোট করা */
+        font-size: 18px;
     }
 
     .switch {
-        width: 60px; /* সুইচ ছোট করা */
+        width: 60px;
         height: 30px;
     }
 
     .switch .slider:before {
         height: 26px;
         width: 26px;
-        font-size: 16px; /* ইমোজি ছোট করা */
+        font-size: 16px;
     }
 
     .timer, .countdown-display {
-        font-size: 24px; /* টাইমারের আকার ছোট করা */
+        font-size: 24px;
     }
 
     .styled-button {
-        font-size: 14px; /* বাটনের ফন্ট ছোট করা */
+        font-size: 14px;
         padding: 10px 15px;
     }
 
     .login-container {
-        width: 90%; /* মোবাইল স্ক্রিনের জন্য লগইন কন্টেইনার সামঞ্জস্য */
+        width: 90%;
         padding: 20px;
     }
 
     h2 {
-        font-size: 20px; /* শিরোনাম আরও ছোট করা */
+        font-size: 20px;
     }
 
     .timer-settings, .alarm-container {
         flex-direction: column; /* টাইমার ও অ্যালার্ম খাড়া করা */
         align-items: center; /* কেন্দ্রস্থ করা */
-        gap: 5px; /* কম স্পেস */
+        gap: 10px; /* উপাদানগুলোর মধ্যে সামঞ্জস্যপূর্ণ দূরত্ব */
+        padding: 10px; /* সামান্য প্যাডিং */
+        background: linear-gradient(135deg, #f3f3f3, #e6e6e6); /* গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+        border-radius: 10px; /* গোলাকার প্রান্ত */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* 3D শ্যাডো */
     }
 
-    .styled-input, .styled-select {
-        font-size: 14px; /* ইনপুট এবং সিলেক্ট ফন্ট ছোট করা */
-        padding: 8px; /* কম প্যাডিং */
+    .timer-settings input, .alarm-container input {
+        width: 100%; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .timer-settings select, .alarm-container select {
+        width: 100%; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .timer-settings button, .alarm-container button {
+        width: 100%; /* বাটন সম্পূর্ণ প্রস্থ */
+        padding: 12px;
+        font-size: 14px;
     }
 }
+
 
 
 
