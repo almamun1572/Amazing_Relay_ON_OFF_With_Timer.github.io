@@ -562,9 +562,12 @@ input:checked + .slider:before {
     }
 
     .control-panel {
-        width: 100%;
-        padding: 15px;
-       
+      width: 100%; /* পুরো স্ক্রিনের প্রস্থ */
+    height: 95%; /* উচ্চতা 95% */
+    padding: 15px; /* সামান্য প্যাডিং */
+    margin-top: 20px; /* উপরের থেকে কিছু স্পেস */
+    box-sizing: border-box; /* প্যাডিং এবং বর্ডারসহ সঠিক মাপ নির্ধারণ */
+      
     }
 
     .device {
