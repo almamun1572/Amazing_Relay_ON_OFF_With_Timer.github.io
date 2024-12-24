@@ -621,7 +621,7 @@ body {
     border-radius: 5px;
 }
 
-/* Updated switch CSS for better integration */
+/* Updated switch CSS for left-to-right sliding emoji switch */
 .switch {
     position: relative;
     display: inline-block;
@@ -650,11 +650,11 @@ body {
 }
 
 .slider:before {
-    content: "😎"; /* Changed emoji to a more neutral option */
+    content: "😎"; /* Emoji starts on the left */
     position: absolute;
     height: 40px; /* Increased size for better visibility */
     width: 40px;
-    left: 5px;
+    left: 5px; /* Positioned on the left initially */
     bottom: 5px;
     background-color: white;
     display: flex;
@@ -673,7 +673,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(50px); /* Adjusted for new switch size */
+    transform: translateX(50px); /* Moves the emoji to the right when checked */
     color: #28a745; /* Updated color for better visibility */
 }
 
