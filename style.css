@@ -621,15 +621,14 @@ body {
     border-radius: 5px;
 }
 
-/* Updated switch CSS for left-to-right sliding emoji switch */
 .switch {
     position: relative;
     display: inline-block;
-    width: 100px; /* Slightly increased width */
-    height: 50px; /* Slightly increased height */
-    background: linear-gradient(145deg, #ffafbd, #ffc3a0); /* Softer gradient */
-    border-radius: 30px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.5);
+    width: 90px; /* স্লাইডারের প্রস্থ */
+    height: 45px; /* স্লাইডারের উচ্চতা */
+    background: linear-gradient(145deg, #ff9cf5, #ff6cc1); /* বাটনের গ্রাডিয়েন্ট */
+    border-radius: 25px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.6);
     transition: background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     cursor: pointer;
 }
@@ -646,39 +645,36 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 30px;
+    border-radius: 25px;
 }
 
 .slider:before {
-    content: "😎"; /* Emoji starts on the left */
+    content: "😄";
     position: absolute;
-    height: 40px; /* Increased size for better visibility */
-    width: 40px;
-    left: 5px; /* Positioned on the left initially */
-    bottom: 5px;
+    height: 35px; /* ইমোজির উচ্চতা */
+    width: 35px; /* ইমোজির প্রস্থ */
+    left: 0px;
+    bottom: 0px;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 22px; /* Adjusted font size */
+    font-size: 20px; /* ইমোজির ফন্ট সাইজ */
     border-radius: 50%;
-    color: #444;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.5);
+    color: #555;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.6);
     transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 input:checked + .slider {
-    background: linear-gradient(145deg, #a1ffce, #faffd1); /* Subtle on state gradient */
-    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.6);
+    background: linear-gradient(145deg, #93f9b9, #00c9ff); /* অন অবস্থার জন্য */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
 }
 
 input:checked + .slider:before {
-    transform: translateX(50px); /* Moves the emoji to the right when checked */
-    color: #28a745; /* Updated color for better visibility */
+    transform: translateX(45px); /* অন অবস্থায় ডানদিকে সরানো */
+    color: #ff1744;
 }
-
-
-
 
 
 /* কন্ট্রোল প্যানেল কন্টেইনার */
