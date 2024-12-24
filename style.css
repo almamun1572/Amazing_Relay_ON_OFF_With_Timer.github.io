@@ -113,7 +113,7 @@ input:checked + .slider:before {
 }
 
 .control-panel h2 {
-    font-size: 36px;
+    font-size: 46px;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -521,33 +521,71 @@ input:checked + .slider:before {
         }
 
 
-
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .control-panel {
-        width: 90%; /* ট্যাবলেটের জন্য কন্ট্রোল প্যানেল সংকুচিত */
-    }
-
-    .login-container {
-        width: 80%; /* ট্যাবলেটের জন্য লগইন কন্টেইনার সংকুচিত */
-        padding: 20px;
-    }
-
-    .device {
-        flex-direction: column; /* ট্যাবলেটের জন্য ডিভাইস ব্লককে খাড়া করা */
-        padding: 10px;
-    }
-
-    .timer-settings, .alarm-container {
-        flex-direction: column; /* ট্যাবলেটের জন্য টাইমার ও অ্যালার্ম খাড়া করা */
-        align-items: flex-start;
-    }
-
-    h2 {
-        font-size: 24px; /* শিরোনাম ছোট করা */
-    }
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
 }
+
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.7);
+    overflow: hidden; /* বাইরে থাকা অংশ লুকাতে */
+    position: relative; /* ক্লক প্রান্ত ঠিক রাখতে */
+}
+.time {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+     color: #ff6f61;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    text-shadow: 1px 1px 3px #000, -1px -1px 3px #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* সময়ের মাঝে ফাঁক */
+}
+
+.time span {
+    display: inline-block;
+    padding: 10px 15px;
+    background: linear-gradient(145deg, #3e3e3f, #1c1c1d);
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
+    text-align: center;
+    min-width: 50px; /* প্রস্থ ঠিক রাখতে */
+}
+
+.time .ampm {
+    font-size: 24px;
+    padding: 5px 10px;
+    background: linear-gradient(145deg, #6a6a6b, #3a3a3b);
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
+    text-transform: uppercase;
+    margin-left: 10px; /* AM/PM সঠিক অবস্থানে আনতে */
+    min-width: 40px; /* ফিক্সড প্রস্থ */
+    text-align: center;
+}
+
+
+
+
+
 
 
 /* Responsive Design for Mobile Screens */
@@ -573,10 +611,19 @@ input:checked + .slider:before {
     }
 
     .device {
-        flex-direction: column;
-        padding: 10px;
-        margin: 10px 0;
-    }
+    display: flex; /* কন্টেইনারগুলোর লে-আউট ঠিক রাখতে */
+    flex-wrap: wrap; /* উপাদানগুলো এক লাইন না ধরে নতুন লাইনে যেতে পারবে */
+    gap: 20px; /* উপ-কন্টেইনারগুলোর মাঝে ফাঁকা জায়গা */
+    justify-content: space-around; /* উপাদানগুলো সমানভাবে ছড়িয়ে রাখবে */
+}
+
+.device > div {
+    padding: 10px; /* প্রতিটি উপ-কন্টেইনারের ভেতরে জায়গা */
+    background-color: #f0f0f0; /* কন্টেইনারের ব্যাকগ্রাউন্ড (চাইলে পরিবর্তন করতে পারেন) */
+    border-radius: 8px; /* কোণাগুলো গোলাকৃতির */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
     .device h3 {
         font-size: 18px;
@@ -643,54 +690,12 @@ input:checked + .slider:before {
         font-size: 14px;
     }
 
-}
-
-
-
 .clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 420px;
-    height: 150px;
-    margin: 0 auto;
-    border-radius: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.7);
-    overflow: hidden; /* বাইরে থাকা অংশ লুকাতে */
-    position: relative; /* ক্লক প্রান্ত ঠিক রাখতে */
+   
+    width: 260px;
+    height: auto;
 }
-.time {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 48px;
-     color: #ff6f61;
-    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
-    text-shadow: 1px 1px 3px #000, -1px -1px 3px #fff;
-    display: flex;
-    align-items: center;
-    gap: 5px; /* সময়ের মাঝে ফাঁক */
 }
 
-.time span {
-    display: inline-block;
-    padding: 10px 15px;
-    background: linear-gradient(145deg, #3e3e3f, #1c1c1d);
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
-    text-align: center;
-    min-width: 50px; /* প্রস্থ ঠিক রাখতে */
-}
 
-.time .ampm {
-    font-size: 24px;
-    padding: 5px 10px;
-    background: linear-gradient(145deg, #6a6a6b, #3a3a3b);
-    border-radius: 5px;
-    box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
-    text-transform: uppercase;
-    margin-left: 10px; /* AM/PM সঠিক অবস্থানে আনতে */
-    min-width: 40px; /* ফিক্সড প্রস্থ */
-    text-align: center;
-}
+
