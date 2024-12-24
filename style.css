@@ -239,9 +239,23 @@ input:checked + .slider:before {
     transition: all 0.3s ease-in-out;
 }
 
-/* টাইমার - অন অবস্থায় */
-.alarm.on {
+.countdown-display {
     font-size: 36px;
+    font-weight: bold;
+    color: #ff6f61;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* যখন অ্যালার্ম সেট হবে তখন রঙ পরিবর্তন */
+.countdown-display.active {
+     font-size: 36px;
     font-weight: bold;
     color: #1e90ff;
     background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* অন অবস্থার জন্য হালকা নীল রঙ */
@@ -253,52 +267,6 @@ input:checked + .slider:before {
     margin-bottom: 10px;
     transition: all 0.3s ease-in-out;
 }
-
-/* টাইমার - অফ অবস্থায় */
-.alarm.off {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ff6f61;
-    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-.countdown-display {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ff6f61;
-    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-
-
-.countdown-display {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ff6f61;
-    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
 
 .styled-button { 
     font-size: 36px;
@@ -324,12 +292,6 @@ input:checked + .slider:before {
     transform: scale(1.05); /* বাটন একটু বড় হয় */
 }
 
-/* সক্রিয় বা ক্লিক স্টাইল */
-.styled-button:active {
-    background: linear-gradient(145deg, #81d4fa, #4fc3f7); /* ক্লিক অবস্থার জন্য গাঢ় নীল */
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.7); /* ইনসেট ইফেক্ট */
-    transform: scale(0.98); /* ক্লিক করলে বাটন একটু ছোট হয় */
-}
 
 
 .styled-button.on {
@@ -359,6 +321,24 @@ input:checked + .slider:before {
     margin-bottom: 10px;
     transition: all 0.3s ease-in-out;
 }
+
+/* সক্রিয় বা ক্লিক স্টাইল */
+.styled-button.active {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e90ff;
+    background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* অন অবস্থার জন্য হালকা নীল রঙ */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
 /* Timer Container */
 .timer-container {
     display: flex;
@@ -553,126 +533,491 @@ input:checked + .slider:before {
 
 /* Responsive Design for Mobile Screens */
 @media (max-width: 375px) {
-   body {
-        flex-direction: column; /* সবকিছু খাড়া রাখুন */
-        justify-content: flex-start; /* উপরের দিক থেকে শুরু হবে */
-        align-items: center; /* কেন্দ্রে সারিবদ্ধ হবে */
-        padding: 10px; /* প্যাডিং যোগ করুন */
-        overflow-y: auto; /* উল্লম্ব স্ক্রল নিশ্চিত করুন */
-        height: auto; /* উচ্চতা স্বয়ংক্রিয় করে দিন */
-    }
-
-
-
-    .control-panel {
-      width: 100%; /* পুরো স্ক্রিনের প্রস্থ */
-    height: 95%; /* উচ্চতা 95% */
-    padding: 15px; /* সামান্য প্যাডিং */
-    margin-top: 20px; /* উপরের থেকে কিছু স্পেস */
-    box-sizing: border-box; /* প্যাডিং এবং বর্ডারসহ সঠিক মাপ নির্ধারণ */
-      
-    }
-
-    .device {
-    display: flex; /* কন্টেইনারগুলোর লে-আউট ঠিক রাখতে */
-    flex-wrap: wrap; /* উপাদানগুলো এক লাইন না ধরে নতুন লাইনে যেতে পারবে */
-    gap: 20px; /* উপ-কন্টেইনারগুলোর মাঝে ফাঁকা জায়গা */
-    justify-content: space-around; /* উপাদানগুলো সমানভাবে ছড়িয়ে রাখবে */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.device > div {
-    padding: 10px; /* প্রতিটি উপ-কন্টেইনারের ভেতরে জায়গা */
-    background-color: #f0f0f0; /* কন্টেইনারের ব্যাকগ্রাউন্ড (চাইলে পরিবর্তন করতে পারেন) */
-    border-radius: 8px; /* কোণাগুলো গোলাকৃতির */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    animation: gradientBG 6s infinite alternate;
+    padding: 10px; /* মোবাইলের জন্য সামান্য জায়গা রাখা */
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.device {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* লেআউট মোবাইলের জন্য */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%; /* মোবাইল স্ক্রিনের পুরো জায়গা ব্যবহার */
+    max-width: 400px; /* বড় মোবাইল স্ক্রিনের জন্য সীমাবদ্ধতা */
+}
+
+.device:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.device h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px; /* স্লাইডারের প্রস্থ */
+    height: 45px; /* স্লাইডারের উচ্চতা */
+    background: linear-gradient(145deg, #ff9cf5, #ff6cc1); /* বাটনের গ্রাডিয়েন্ট */
+    border-radius: 25px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.6);
+    transition: background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+}
+
+.slider:before {
+    content: "😄";
+    position: absolute;
+    height: 35px; /* ইমোজির উচ্চতা */
+    width: 35px; /* ইমোজির প্রস্থ */
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* ইমোজির ফন্ট সাইজ */
+    border-radius: 50%;
+    color: #555;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.6);
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+input:checked + .slider {
+    background: linear-gradient(145deg, #93f9b9, #00c9ff); /* অন অবস্থার জন্য */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+}
+
+input:checked + .slider:before {
+    transform: translateX(45px); /* অন অবস্থায় ডানদিকে সরানো */
+    color: #ff1744;
 }
 
 
-    .device h3 {
-        font-size: 18px;
+
+
+
+/* কন্ট্রোল প্যানেল কন্টেইনার */
+.control-panel {
+    background: linear-gradient(135deg, #2b5876, #4e4376); /* কন্টেইনার ব্যাকগ্রাউন্ড */
+    padding: 20px;
+    padding-top: 60px; /* মোবাইলের জন্য সামঞ্জস্য */
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.2);
+    width: 100%; /* মোবাইল স্ক্রিনে পূর্ণ প্রস্থ */
+    max-width: 350px; /* বড় মোবাইল স্ক্রিনে সীমাবদ্ধতা */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.control-panel h2 {
+    font-size: 24px; /* মোবাইলের জন্য ছোট ফন্ট সাইজ */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #ff6f61, #de6161); /* হেডিং-এর গ্রাডিয়েন্ট */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* লগইন কন্টেইনার */
+.login-container {
+    width: 100%; /* মোবাইলের জন্য পূর্ণ প্রস্থ */
+    max-width: 300px; /* সীমাবদ্ধতা */
+    margin: 30px auto; /* মোবাইলের জন্য সামঞ্জস্য */
+    background: linear-gradient(145deg, #f3f3f3, #e6e6e6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* হেডার স্টাইলিং */
+.login-container h2 {
+    font-size: 20px; /* মোবাইলের জন্য ছোট ফন্ট সাইজ */
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ফর্ম গ্রুপ স্টাইলিং */
+.form-group {
+    position: relative;
+    margin: 15px 0;
+}
+
+.form-group i {
+    position: absolute;
+    top: 10px; /* মোবাইলের জন্য সামঞ্জস্য */
+    left: 10px;
+    color: #888;
+    font-size: 16px;
+}
+
+/* ইনপুট ফিল্ড স্টাইলিং */
+.login-container input {
+    width: 100%;
+    padding: 8px 30px; /* আইকনের জন্য জায়গা */
+    font-size: 14px; /* মোবাইলের জন্য ছোট ফন্ট সাইজ */
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+    outline: none;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-container input:focus {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2), inset -1px -1px 2px rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+/* Button Styling */
+    .login-container button {
+        width: 100%;
+        padding: 10px 0; /* মোবাইল স্ক্রিনের জন্য প্যাডিং হ্রাস */
+        font-size: 16px; /* ফন্ট সাইজ সামান্য ছোট */
+        color: #fff;
+        border: none;
+        border-radius: 20px; /* মোবাইল স্ক্রিনে নরম প্রান্ত */
+        background: linear-gradient(145deg, #1e90ff, #1c86ee);
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
     }
 
-  .switch {
-        width: 90px;
-        height: 45px;
-    }
-.switch .slider:before {
-        width: 40px;
-        height: 40px;
-        font-size: 37px;
-    }
-    .timer, .countdown-display {
-        font-size: 24px;
-    }
-
-    .styled-button {
-        font-size: 14px;
-        padding: 10px 15px;
+    .login-container button:hover {
+        background: linear-gradient(145deg, #1c86ee, #1e90ff);
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.8);
     }
 
     .login-container {
-        width: 90%;
-        padding: 20px;
+        width: 90%; /* স্ক্রিনের প্রস্থের মানানসই */
+        padding: 15px; /* প্যাডিং সামান্য কমানো */
     }
 
-    h2 {
-        font-size: 20px;
+    .login-container h2 {
+        font-size: 20px; /* ছোট ডিভাইসে শিরোনামের ফন্ট সাইজ */
     }
 
-    .timer-container, .alarm-container {
-        flex-direction: column; /* টাইমার ও অ্যালার্ম খাড়া করা */
-        align-items: center; /* কেন্দ্রস্থ করা */
-        gap: 10px; /* উপাদানগুলোর মধ্যে সামঞ্জস্যপূর্ণ দূরত্ব */
-        padding: 10px; /* সামান্য প্যাডিং */
-        background: linear-gradient(135deg, #f3f3f3, #e6e6e6); /* গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
-        border-radius: 10px; /* গোলাকার প্রান্ত */
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* 3D শ্যাডো */
+    /* টাইমার - অন অবস্থায় */
+    .timer.on {
+        font-size: 28px; /* মোবাইল স্ক্রিনের জন্য ফন্ট সাইজ হ্রাস */
+        font-weight: bold;
+        color: #1e90ff;
+        background: linear-gradient(145deg, #e0f7fa, #b2ebf2);
+        text-align: center;
+        padding: 8px 15px; /* মোবাইল স্ক্রিনে প্যাডিং সামঞ্জস্য করা */
+        border-radius: 8px; /* প্রান্ত নরম করা */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        margin-bottom: 8px;
+        transition: all 0.3s ease-in-out;
     }
 
-    .timer-container input, .alarm-container input {
-        width: 260px; /* মোবাইলের জন্য ইনপুট সম্পূর্ণ প্রস্থ */
-        padding: 10px;
-        font-size: 14px;
+    /* টাইমার - অফ অবস্থায় */
+    .timer.off {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ff6f61;
+        background: linear-gradient(145deg, #ffebee, #ffcdd2);
+        text-align: center;
+        padding: 8px 15px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        margin-bottom: 8px;
+        transition: all 0.3s ease-in-out;
     }
 
-   .styled-input, .timer-container select, .alarm-container select {
-        width: 260px; /* ড্রপডাউন সম্পূর্ণ প্রস্থ */
-        padding: 10px;
-        font-size: 14px;
-    }
 
-  .timer-container button, .alarm-container button {
-        width: 260px; /* বাটন সম্পূর্ণ প্রস্থ */
-        padding: 12px;
-        font-size: 14px;
-    }
-.styled-button,
-    .styled-button.off {
-        width: 260px; /* সম্পূর্ণ প্রস্থ */
-        padding: 12px;
-        font-size: 14px;
-    }
-
-.clock {
-        height: 100px; /* মোবাইলে উচ্চতা কমানো */
+ .countdown-display {
+        font-size: 36px;
+        font-weight: bold;
+        color: #ff6f61;
+        background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+        text-align: center;
+        padding: 10px 20px;
         border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .countdown-display.active {
+        color: #1e90ff;
+        background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* অন অবস্থার জন্য হালকা নীল রঙ */
+    }
+
+    .styled-button {
+        font-size: 36px;
+        font-weight: bold;
+        color: #1e90ff;
+        background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* হালকা নীল রঙ */
+        text-align: center;
+        padding: 15px 30px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .styled-button:hover {
+        background: linear-gradient(145deg, #b2ebf2, #e0f7fa);
+        color: #0056b3;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.7);
+        transform: scale(1.05);
+    }
+
+    .styled-button.on {
+        background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* অন অবস্থার জন্য হালকা নীল রঙ */
+        color: #1e90ff;
+    }
+
+    .styled-button.off {
+        background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+        color: #ff6f61;
+    }
+
+    .styled-button.active {
+        background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* অন অবস্থার জন্য হালকা নীল রঙ */
+        color: #1e90ff;
+ }
+
+
+
+/* Timer Container */
+    .timer-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    }
+
+    .alarm-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    }
+
+    .styled-select { 
+        padding: 12px 16px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        border: none;
+        border-radius: 15px;
+        background: linear-gradient(145deg, #ff6f61, #ffa69e);
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.6);
+        outline: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .styled-select:hover {
+        background: linear-gradient(145deg, #ffa69e, #ff6f61);
+        box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4), -6px -6px 10px rgba(255, 255, 255, 0.5);
+        transform: scale(1.03);
+        color: #ffffe0;
+    }
+
+    .styled-select:active {
+        background: linear-gradient(145deg, #ff3d00, #ff6f61);
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+    }
+
+    .styled-select option {
+        padding: 10px;
+        background: #ffffff;
+        color: #555;
+        font-weight: bold;
+    }
+
+    .styled-select:focus {
+        box-shadow: 0px 0px 10px 3px rgba(255, 105, 135, 0.8);
+        border: 2px solid #ff6f61;
+    }
+
+    .styled-input { 
+        padding: 10px 2px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #444;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #f0f9ff, #cbe6f7);
+        box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+        outline: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .styled-input:hover {
+        background: linear-gradient(145deg, #e0f7fa, #b2ebf2);
+        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.5);
+        transform: scale(1.02);
+    }
+
+    .styled-input:focus {
+        background: linear-gradient(145deg, #cbe6f7, #f0f9ff);
+        box-shadow: 0 0 10px 2px rgba(0, 150, 255, 0.7);
+        border: 2px solid #00bcd4;
+        color: #222;
+    }
+
+    .styled-input:active {
+        background: linear-gradient(145deg, #b2ebf2, #e0f7fa);
+        box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.4), inset -3px -3px 5px rgba(255, 255, 255, 0.5);
+    }
+
+    .styled-input::placeholder {
+        color: #888;
+        font-style: italic;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .styled-input:focus::placeholder {
+        color: #bbb;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+
+ .slider-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    }
+
+    .clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* মোবাইল স্ক্রিনের প্রস্থে মানিয়ে যায় */
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 20px;
+        color: #fff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(145deg, #ffffff, #e6e6e6);
+        box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.7);
+        overflow: hidden;
+        position: relative;
     }
 
     .time {
-        font-size: 28px; /* ফন্ট আকার আরও ছোট */
-        gap: 3px; /* সময়ের ফাঁক আরও কমানো */
+        font-family: 'Orbitron', sans-serif;
+        font-size: 36px; /* মোবাইল স্ক্রিনের জন্য আকার হ্রাস */
+        color: #ff6f61;
+        background: linear-gradient(145deg, #ffebee, #ffcdd2);
+        text-shadow: 1px 1px 3px #000, -1px -1px 3px #fff;
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 
     .time span {
-        padding: 6px 8px;
-        min-width: 35px;
+        display: inline-block;
+        padding: 8px 12px;
+        background: linear-gradient(145deg, #3e3e3f, #1c1c1d);
+        border-radius: 10px;
+        box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
+        text-align: center;
+        min-width: 40px; /* মোবাইল স্ক্রিনে প্রস্থ সামঞ্জস্য করা */
     }
 
     .time .ampm {
-        font-size: 16px; /* AM/PM আকার হ্রাস */
-        min-width: 30px;
+        font-size: 20px;
+        padding: 5px 8px;
+        background: linear-gradient(145deg, #6a6a6b, #3a3a3b);
+        border-radius: 5px;
+        box-shadow: inset 2px 2px 4px #111, inset -2px -2px 4px #4f4f4f;
+        text-transform: uppercase;
+        margin-left: 8px;
+        min-width: 35px;
+        text-align: center;
     }
-
 
 
 

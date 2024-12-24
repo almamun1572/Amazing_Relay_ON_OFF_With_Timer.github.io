@@ -144,6 +144,7 @@ function setAlarm(relayNumber) {
     const alarmActionSelect = document.getElementById(`alarmAction${relayNumber}`);
     const countdownDisplay = document.getElementById(`countdownDisplay${relayNumber}`);
     const relaySwitch = document.getElementById(`relay${relayNumber}Switch`);
+    const alarmButton = document.getElementById(`setAlarm${relayNumber}`);
 
     const alarmTime = alarmTimeInput.value;
     const action = alarmActionSelect.value;
@@ -151,8 +152,6 @@ function setAlarm(relayNumber) {
     if (action === "resetalarm") {
         // Reset Alarm Logic
         resetAlarm(relayNumber);
-        button.classList.remove("on");
-        button.classList.add("off");
         return;
     }
 
@@ -171,6 +170,10 @@ function setAlarm(relayNumber) {
         return;
     }
 
+    // Change button and countdown display colors when alarm is set
+    alarmButton.classList.add("active");
+    countdownDisplay.classList.add("active");
+
     // Calculate remaining time
     const interval = setInterval(() => {
         const now = new Date();
@@ -183,12 +186,12 @@ function setAlarm(relayNumber) {
             // Perform the action (turn relay ON/OFF)
             relaySwitch.checked = action === "on";
             toggleRelay(relayNumber);
-            alert(`Alarm triggered for relay ${relayNumber}: ${action.toUpperCase()}`);
 
- // রঙ ডিফল্টে ফিরিয়ে আনুন
-            button.classList.remove("on");
-            button.classList.add("off");
+            // Reset colors to default
+            alarmButton.classList.remove("active");
+            countdownDisplay.classList.remove("active");
 
+           
         } else {
             const hrs = String(Math.floor(timeLeft / 3600000)).padStart(2, "0");
             const mins = String(Math.floor((timeLeft % 3600000) / 60000)).padStart(2, "0");
@@ -199,16 +202,15 @@ function setAlarm(relayNumber) {
 
     // Save interval ID for reset functionality
     countdownDisplay.dataset.interval = interval;
-// বাটনের রঙ পরিবর্তন
-    button.classList.add("on");
-    button.classList.remove("off");
+
     console.log(`Alarm set for relay ${relayNumber} at ${alarmTime}, action: ${action}`);
 }
 
-// Reset Alarm Function
+
 function resetAlarm(relayNumber) {
     const countdownDisplay = document.getElementById(`countdownDisplay${relayNumber}`);
     const relaySwitch = document.getElementById(`relay${relayNumber}Switch`);
+    const alarmButton = document.getElementById(`setAlarm${relayNumber}`);
 
     const existingInterval = countdownDisplay.dataset.interval;
     if (existingInterval) {
@@ -218,12 +220,14 @@ function resetAlarm(relayNumber) {
     countdownDisplay.textContent = "--:--:--"; // Reset countdown display
     relaySwitch.checked = false; // Turn off the relay
 
-// বাটনের রঙ ডিফল্টে ফিরিয়ে আনুন
-    button.classList.remove("on");
-    button.classList.add("off");
+    // Reset colors to default
+    alarmButton.classList.remove("active");
+    countdownDisplay.classList.remove("active");
 
     console.log(`Alarm for relay ${relayNumber} has been reset.`);
 }
+
+
 
 
 
