@@ -849,29 +849,32 @@ input:checked + .slider:before {
 
 
 
-/* Timer Container */
+/* Timer Container - Responsive */
     .timer-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
-        padding: 10px;
-        background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+        flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
+        gap: 8px; /* গ্যাপ সামঞ্জস্য */
+        padding: 8px; /* কম প্যাডিং */
+        margin-top: 8px; /* কম মার্জিন */
+        border-radius: 8px; /* প্রান্ত সামান্য নরম */
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.8);
     }
 
+    /* Alarm Container - Responsive */
     .alarm-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
-        padding: 10px;
-        background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+        flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
+        gap: 8px; /* গ্যাপ সামঞ্জস্য */
+        padding: 8px; /* কম প্যাডিং */
+        margin-top: 8px; /* কম মার্জিন */
+        border-radius: 8px; /* প্রান্ত সামান্য নরম */
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Container Inner Elements */
+    .timer-container div,
+    .alarm-container div {
+        font-size: 14px; /* ফন্ট সাইজ ছোট করা */
+        padding: 6px 8px; /* উপাদানের প্যাডিং কমানো */
+        border-radius: 6px; /* প্রান্ত ছোট করা */
     }
 
     .styled-select { 
