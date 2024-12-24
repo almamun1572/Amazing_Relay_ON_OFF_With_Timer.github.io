@@ -209,12 +209,6 @@ input:checked + .slider:before {
 }
 
 
-
-
-
-
-
-
 /* টাইমার - অন অবস্থায় */
 .timer.on {
     font-size: 36px;
