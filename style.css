@@ -653,8 +653,8 @@ body {
     position: absolute;
     height: 35px; /* ইমোজির উচ্চতা */
     width: 35px; /* ইমোজির প্রস্থ */
-    left: 0px;
-    bottom: 0px;
+    right: 9px;
+   top: 4px;
     background-color: white;
     display: flex;
     justify-content: center;
