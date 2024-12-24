@@ -652,15 +652,57 @@ input:checked + .slider:before {
 
 /* কন্ট্রোল প্যানেল কন্টেইনার */
 .control-panel {
-    background: linear-gradient(135deg, #2b5876, #4e4376); /* কন্টেইনার ব্যাকগ্রাউন্ড */
-    padding: 20px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb); /* রঙিন ব্যাকগ্রাউন্ড */
+    padding: 30px;
     padding-top: 2400px; /* মোবাইলের জন্য সামঞ্জস্য */
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4), -8px -8px 15px rgba(255, 255, 255, 0.5);
     width: 100%; /* মোবাইল স্ক্রিনে পূর্ণ প্রস্থ */
-    max-width: 350px; /* বড় মোবাইল স্ক্রিনে সীমাবদ্ধতা */
+    max-width: 400px; /* বড় স্ক্রিনের জন্য সীমাবদ্ধতা */
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* থ্রিডি ইফেক্ট */
+.control-panel::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    animation: rotateBg 10s linear infinite;
+    z-index: 0;
+}
+
+.control-panel * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotateBg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* টেক্সট স্টাইল */
+.control-panel h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.control-panel p {
+    font-size: 1rem;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .control-panel h2 {
