@@ -621,14 +621,15 @@ body {
     border-radius: 5px;
 }
 
+/* Updated switch CSS for better integration */
 .switch {
     position: relative;
     display: inline-block;
-    width: 90px; /* স্লাইডারের প্রস্থ */
-    height: 45px; /* স্লাইডারের উচ্চতা */
-    background: linear-gradient(145deg, #ff9cf5, #ff6cc1); /* বাটনের গ্রাডিয়েন্ট */
-    border-radius: 25px;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.6);
+    width: 100px; /* Slightly increased width */
+    height: 50px; /* Slightly increased height */
+    background: linear-gradient(145deg, #ffafbd, #ffc3a0); /* Softer gradient */
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.5);
     transition: background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     cursor: pointer;
 }
@@ -645,35 +646,35 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 25px;
+    border-radius: 30px;
 }
 
 .slider:before {
-    content: "😄";
+    content: "😎"; /* Changed emoji to a more neutral option */
     position: absolute;
-    height: 35px; /* ইমোজির উচ্চতা */
-    width: 35px; /* ইমোজির প্রস্থ */
+    height: 40px; /* Increased size for better visibility */
+    width: 40px;
     left: 5px;
     bottom: 5px;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px; /* ইমোজির ফন্ট সাইজ */
+    font-size: 22px; /* Adjusted font size */
     border-radius: 50%;
-    color: #555;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.6);
+    color: #444;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.5);
     transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 input:checked + .slider {
-    background: linear-gradient(145deg, #93f9b9, #00c9ff); /* অন অবস্থার জন্য */
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+    background: linear-gradient(145deg, #a1ffce, #faffd1); /* Subtle on state gradient */
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.6);
 }
 
 input:checked + .slider:before {
-    transform: translateX(45px); /* অন অবস্থায় ডানদিকে সরানো */
-    color: #ff1744;
+    transform: translateX(50px); /* Adjusted for new switch size */
+    color: #28a745; /* Updated color for better visibility */
 }
 
 
