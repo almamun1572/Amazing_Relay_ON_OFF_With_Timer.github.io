@@ -691,14 +691,28 @@ input:checked + .slider:before {
     }
 
 .clock {
-   
-    width: 290px;
-    height: auto;
-}
-.time {
-    font-size: 36px;
-    gap: 3px; /* সময়ের মাঝে ফাঁক */
-}
+        height: 100px; /* মোবাইলে উচ্চতা কমানো */
+        border-radius: 10px;
+    }
+
+    .time {
+        font-size: 28px; /* ফন্ট আকার আরও ছোট */
+        gap: 3px; /* সময়ের ফাঁক আরও কমানো */
+    }
+
+    .time span {
+        padding: 6px 8px;
+        min-width: 35px;
+    }
+
+    .time .ampm {
+        font-size: 16px; /* AM/PM আকার হ্রাস */
+        min-width: 30px;
+    }
+
+
+
+
 }
 
 
