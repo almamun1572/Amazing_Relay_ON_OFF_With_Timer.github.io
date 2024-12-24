@@ -151,6 +151,8 @@ function setAlarm(relayNumber) {
     if (action === "resetalarm") {
         // Reset Alarm Logic
         resetAlarm(relayNumber);
+        button.classList.remove("on");
+        button.classList.add("off");
         return;
     }
 
@@ -182,6 +184,11 @@ function setAlarm(relayNumber) {
             relaySwitch.checked = action === "on";
             toggleRelay(relayNumber);
             alert(`Alarm triggered for relay ${relayNumber}: ${action.toUpperCase()}`);
+
+ // রঙ ডিফল্টে ফিরিয়ে আনুন
+            button.classList.remove("on");
+            button.classList.add("off");
+
         } else {
             const hrs = String(Math.floor(timeLeft / 3600000)).padStart(2, "0");
             const mins = String(Math.floor((timeLeft % 3600000) / 60000)).padStart(2, "0");
@@ -192,7 +199,9 @@ function setAlarm(relayNumber) {
 
     // Save interval ID for reset functionality
     countdownDisplay.dataset.interval = interval;
-
+// বাটনের রঙ পরিবর্তন
+    button.classList.add("on");
+    button.classList.remove("off");
     console.log(`Alarm set for relay ${relayNumber} at ${alarmTime}, action: ${action}`);
 }
 
@@ -208,6 +217,11 @@ function resetAlarm(relayNumber) {
 
     countdownDisplay.textContent = "--:--:--"; // Reset countdown display
     relaySwitch.checked = false; // Turn off the relay
+
+// বাটনের রঙ ডিফল্টে ফিরিয়ে আনুন
+    button.classList.remove("on");
+    button.classList.add("off");
+
     console.log(`Alarm for relay ${relayNumber} has been reset.`);
 }
 

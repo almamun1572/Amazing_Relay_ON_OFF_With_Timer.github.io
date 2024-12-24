@@ -239,6 +239,36 @@ input:checked + .slider:before {
     transition: all 0.3s ease-in-out;
 }
 
+/* টাইমার - অন অবস্থায় */
+.alarm.on {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e90ff;
+    background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* অন অবস্থার জন্য হালকা নীল রঙ */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* টাইমার - অফ অবস্থায় */
+.alarm.off {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6f61;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
 .countdown-display {
     font-size: 36px;
     font-weight: bold;
@@ -252,6 +282,23 @@ input:checked + .slider:before {
     margin-bottom: 10px;
     transition: all 0.3s ease-in-out;
 }
+
+
+
+.countdown-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6f61;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
 
 .styled-button { 
     font-size: 36px;
