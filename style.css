@@ -559,12 +559,13 @@ body {
     }
 }
 
+/* ইউনিক ও কালারফুল থ্রিডি স্টাইল সহ ডিভাইস কন্টেইনার */
 .device {
-    background: linear-gradient(145deg, #ffecd2, #fcb69f, #fe8c00); /* কালারফুল প্রফেশনাল ব্যাকগ্রাউন্ড */
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.8); /* 3D ইফেক্ট */
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
+    background: linear-gradient(145deg, #ffafbd, #ffc3a0, #ff9a9e); /* কালারফুল ব্যাকগ্রাউন্ড */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), -6px -6px 15px rgba(255, 255, 255, 0.5); /* থ্রিডি ইফেক্ট */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
     display: flex;
     flex-direction: column; /* লেআউট মোবাইলের জন্য */
     justify-content: center;
@@ -572,13 +573,42 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     width: 100%; /* মোবাইল স্ক্রিনের পুরো জায়গা ব্যবহার */
-    max-width: 400px; /* বড় মোবাইল স্ক্রিনের জন্য সীমাবদ্ধতা */
+    max-width: 450px; /* বড় স্ক্রিনের জন্য সীমাবদ্ধতা */
+    position: relative;
+    overflow: hidden;
+}
+
+.device::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    animation: deviceBgRotate 12s linear infinite;
+    z-index: 0;
+}
+
+.device * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes deviceBgRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .device:hover {
-    transform: translateY(-5px);
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4), -8px -8px 20px rgba(255, 255, 255, 0.6);
 }
+
 
 .device h3 {
     font-size: 18px;
@@ -900,27 +930,84 @@ input:checked + .slider:before {
 
 
 
-/* Timer Container - Colorful and 3D Styling */
+/* Timer Container - Responsive */
 .timer-container {
     flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
     gap: 8px; /* গ্যাপ সামঞ্জস্য */
     padding: 8px; /* কম প্যাডিং */
     margin-top: 8px; /* কম মার্জিন */
     border-radius: 8px; /* প্রান্ত সামান্য নরম */
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb); /* কালারফুল ব্যাকগ্রাউন্ড */
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.8); /* 3D ইফেক্ট */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.7);
+    background: linear-gradient(135deg, #ffecd2, #fcb69f, #ff9a9e); /* কালারফুল ব্যাকগ্রাউন্ড */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Alarm Container - Colorful and 3D Styling */
+.timer-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+    animation: rotateBgTimer 10s linear infinite;
+    z-index: 0;
+}
+
+.timer-container * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotateBgTimer {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Alarm Container - Responsive */
 .alarm-container {
     flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
     gap: 8px; /* গ্যাপ সামঞ্জস্য */
     padding: 8px; /* কম প্যাডিং */
     margin-top: 8px; /* কম মার্জিন */
     border-radius: 8px; /* প্রান্ত সামান্য নরম */
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #89f7fe); /* কালারফুল ব্যাকগ্রাউন্ড */
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.8); /* 3D ইফেক্ট */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.7);
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #d4fc79); /* কালারফুল ব্যাকগ্রাউন্ড */
+    position: relative;
+    overflow: hidden;
 }
+
+.alarm-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+    animation: rotateBgAlarm 10s linear infinite;
+    z-index: 0;
+}
+
+.alarm-container * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotateBgAlarm {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 
     /* Container Inner Elements */
