@@ -560,38 +560,7 @@ body {
     }
 }
 
-.device {
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.7);
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column; /* লেআউট মোবাইলের জন্য */
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    width: 100%; /* মোবাইল স্ক্রিনের পুরো জায়গা ব্যবহার */
-    max-width: 400px; /* বড় মোবাইল স্ক্রিনের জন্য সীমাবদ্ধতা */
-}
 
-.device:hover {
-    transform: translateY(-5px);
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.8);
-}
-
-
-.device h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    text-align: center;
-    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
-    padding: 5px 10px;
-    border-radius: 5px;
-}
 
 .switch {
     position: relative;
@@ -897,10 +866,45 @@ input:checked + .slider:before {
         color: #1e90ff;
  }
 
+.device {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* লেআউট মোবাইলের জন্য */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%; /* মোবাইল স্ক্রিনের পুরো জায়গা ব্যবহার */
+    max-width: 400px; /* বড় মোবাইল স্ক্রিনের জন্য সীমাবদ্ধতা */
+}
 
+.device:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+
+.device h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(145deg, #ffebee, #ffcdd2); /* অফ অবস্থার জন্য হালকা লাল রঙ */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
 "/* Timer Container - Responsive */
     .timer-container {
+        display: flex;
+       flex-direction: column; /* লেআউট মোবাইলের জন্য */
+    justify-content: center;
+    align-items: center;
         background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
         flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
         gap: 8px; /* গ্যাপ সামঞ্জস্য */
