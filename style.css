@@ -213,7 +213,85 @@ input:checked + .slider:before {
 
 
 
+/* টাইমার ডিসপ্লে */
+.timer {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6f61;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
 
+/* টাইমার সেটিংস কন্টেইনার */
+.timer-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #f3f3f3, #e6e6e6);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* ইনপুট ফিল্ড */
+.timer-settings input {
+    width: 80px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 5px rgba(255, 255, 255, 0.6);
+    text-align: center;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.timer-settings input:focus {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* ড্রপডাউন মেনু */
+.timer-settings select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 5px rgba(255, 255, 255, 0.6);
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.timer-settings select:focus {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+}
+
+
+.timer-settings button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background: linear-gradient(145deg, #ff6f61, #de6161);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timer-settings button:hover {
+    background: linear-gradient(145deg, #de6161, #ff6f61);
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2), inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+}
 
 /* টাইমার - অন অবস্থায় */
 .timer.on {
