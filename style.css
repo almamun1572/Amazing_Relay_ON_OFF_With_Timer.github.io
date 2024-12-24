@@ -849,25 +849,28 @@ input:checked + .slider:before {
 
 
 
-/* Timer Container - Responsive */
-    .timer-container {
-        flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
-        gap: 8px; /* গ্যাপ সামঞ্জস্য */
-        padding: 8px; /* কম প্যাডিং */
-        margin-top: 8px; /* কম মার্জিন */
-        border-radius: 8px; /* প্রান্ত সামান্য নরম */
-        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.8);
-    }
+/* Timer Container - Colorful and 3D Styling */
+.timer-container {
+    flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
+    gap: 8px; /* গ্যাপ সামঞ্জস্য */
+    padding: 8px; /* কম প্যাডিং */
+    margin-top: 8px; /* কম মার্জিন */
+    border-radius: 8px; /* প্রান্ত সামান্য নরম */
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb); /* কালারফুল ব্যাকগ্রাউন্ড */
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.8); /* 3D ইফেক্ট */
+}
 
-    /* Alarm Container - Responsive */
-    .alarm-container {
-        flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
-        gap: 8px; /* গ্যাপ সামঞ্জস্য */
-        padding: 8px; /* কম প্যাডিং */
-        margin-top: 8px; /* কম মার্জিন */
-        border-radius: 8px; /* প্রান্ত সামান্য নরম */
-        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.8);
-    }
+/* Alarm Container - Colorful and 3D Styling */
+.alarm-container {
+    flex-direction: column; /* মোবাইলে উপরের নিচে সাজাতে */
+    gap: 8px; /* গ্যাপ সামঞ্জস্য */
+    padding: 8px; /* কম প্যাডিং */
+    margin-top: 8px; /* কম মার্জিন */
+    border-radius: 8px; /* প্রান্ত সামান্য নরম */
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #89f7fe); /* কালারফুল ব্যাকগ্রাউন্ড */
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.8); /* 3D ইফেক্ট */
+}
+
 
     /* Container Inner Elements */
     .timer-container div,
