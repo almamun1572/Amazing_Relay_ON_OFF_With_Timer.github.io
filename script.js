@@ -2,6 +2,15 @@
      const databaseURL = "https://mamun-4relay-off-default-rtdb.firebaseio.com/";
         const databaseSecret = "qRvvjyq1hWfswNHqIzGG2x1iwou6h4iYzYtwdGfH";
 
+// Firebase SDK Initialization
+const firebaseConfig = {
+    databaseURL: databaseURL,
+};
+firebase.initializeApp(firebaseConfig);
+const databaseRef = firebase.database().ref("/firebase25july");
+
+
+
         // Dummy Login Credentials
         const validEmail = "afrinakhatun6037@gmail.com";
         const validPassword = "2323";
@@ -57,6 +66,25 @@ async function fetchRelayStates() {
         alert("Could not fetch relay states.");
     }
 }
+
+
+// Realtime Listener for Firebase
+function setupRealtimeListener() {
+    databaseRef.on("value", (snapshot) => {
+        const data = snapshot.val();
+        for (let i = 1; i <= 4; i++) {
+            const relaySwitch = document.getElementById(`relay${i}Switch`);
+            const state = data[`relay${i}`] || "Off";
+            relaySwitch.checked = state === "on";
+        }
+        console.log("Relay states updated in real-time:", data);
+    });
+}
+
+// Initialize: Fetch States and Setup Realtime Listener
+fetchRelayStates();
+setupRealtimeListener();
+
 
 
 function setTimer(relayNumber) {
