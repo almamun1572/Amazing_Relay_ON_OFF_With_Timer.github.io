@@ -2,13 +2,6 @@
      const databaseURL = "https://mamun-4relay-off-default-rtdb.firebaseio.com/";
         const databaseSecret = "qRvvjyq1hWfswNHqIzGG2x1iwou6h4iYzYtwdGfH";
 
-// Firebase SDK Initialization
-const firebaseConfig = {
-    databaseURL: databaseURL,
-};
-firebase.initializeApp(firebaseConfig);
-const databaseRef = firebase.database().ref("/firebase25july");
-
 
 
         // Dummy Login Credentials
@@ -28,6 +21,18 @@ const databaseRef = firebase.database().ref("/firebase25july");
                 alert("Invalid email or password!");
             }
         }
+
+
+
+// Firebase SDK Initialization
+const firebaseConfig = {
+    databaseURL: "https://mamun-4relay-off-default-rtdb.firebaseio.com/",
+};
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+const databaseRef = firebase.database().ref("/firebase25july");
+
 
 // Toggle Relay Function
 async function toggleRelay(relayNumber) {
