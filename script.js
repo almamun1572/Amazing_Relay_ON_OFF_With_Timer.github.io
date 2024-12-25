@@ -1,5 +1,5 @@
 
-     const databaseURL = "https://mamun-4relay-off-default-rtdb.firebaseio.com/";
+  const databaseURL = "https://mamun-4relay-off-default-rtdb.firebaseio.com/";
         const databaseSecret = "qRvvjyq1hWfswNHqIzGG2x1iwou6h4iYzYtwdGfH";
 
 
@@ -23,17 +23,6 @@
         }
 
 
-
-// Firebase SDK Initialization
-const firebaseConfig = {
-    databaseURL: "https://mamun-4relay-off-default-rtdb.firebaseio.com/",
-};
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
-const databaseRef = firebase.database().ref("/firebase25july");
-
-
 // Toggle Relay Function
 async function toggleRelay(relayNumber) {
     const relaySwitch = document.getElementById(`relay${relayNumber}Switch`);
@@ -41,8 +30,7 @@ async function toggleRelay(relayNumber) {
     const newState = isChecked ? "on" : "off";
 
     try {
-        // Update Relay State in Firebase 
-              await fetch(`${databaseURL}/firebase25july/relay${relayNumber}.json?auth=${databaseSecret}`, {
+        await fetch(`${databaseURL}/firebase25july/relay${relayNumber}.json?auth=${databaseSecret}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newState),
@@ -72,24 +60,8 @@ async function fetchRelayStates() {
     }
 }
 
-
-// Realtime Listener for Firebase
-function setupRealtimeListener() {
-    databaseRef.on("value", (snapshot) => {
-        const data = snapshot.val();
-        for (let i = 1; i <= 4; i++) {
-            const relaySwitch = document.getElementById(`relay${i}Switch`);
-            const state = data[`relay${i}`] || "Off";
-            relaySwitch.checked = state === "on";
-        }
-        console.log("Relay states updated in real-time:", data);
-    });
-}
-
-// Initialize: Fetch States and Setup Realtime Listener
-fetchRelayStates();
-setupRealtimeListener();
-
+// Call fetchRelayStates every 3 seconds
+setInterval(fetchRelayStates, 3000);
 
 
 function setTimer(relayNumber) {
